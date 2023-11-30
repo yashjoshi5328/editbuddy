@@ -1,0 +1,170 @@
+{% extends "home_layout.html" %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+body
+{
+    font-family: 'Lato', sans-serif;
+}
+.outer-box
+{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top left,#1b0a31 ,#0e3034);
+    
+}
+.inner-box
+{  
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    padding: 20px 40px;
+    /* background-color: #ffffff09; */
+    /* background: linear-gradient(to top left, #ffffffff,#ffffff33); */
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px #2773a5;
+    z-index: 2;
+}
+.signup-header h1
+{
+    font-size: 2.rem;
+    color: #50b1ed;
+}
+.signup-header p
+{
+    font-size: 0.9rem;
+    color: #555;
+}
+.signup-body
+{
+    margin: 20px 0;
+}
+.signup-body p
+{
+    margin: 10px 0;
+    color: rgb(131, 105, 105);
+}
+.signup p label
+{
+    display: block;
+    font-weight: bold;
+}
+.signup-body p input
+{
+    width:100%;
+    padding: 10px;
+    border: 2px solid #cccc;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.signup-body p input[type="submit"]
+{
+    background-color: #3498db;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.signup-body p input[type="submit"]:hover
+{
+    background-color: #2773a5;
+}
+.signup-footer p
+{
+    color: #555;
+    text-align: center;
+}
+.signup-footer p a
+{
+    color: #2773a5;
+}
+.circle
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: linear-gradient(to top right,#ffffffaa,#ffffffff);
+    position: absolute;
+}
+.c1
+{
+    top: 100px;
+    left: 340px;
+}
+.c2{
+    bottom: 100px;
+    right: 340px;
+}
+.c3{
+    bottom: 120px;
+    right: 140px;
+    width: 100px;
+    height:100px;
+}
+.c4{
+    top: 80px;
+    left: 140px;
+    width: 100px;
+    height:100px;
+}
+.c5{
+    bottom: 140px;
+    right: 40px;
+    width: 50px;
+    height:50px;
+}
+.c6{
+    top: 70px;
+    left: 40px;
+    width: 50px;
+    height:50px;
+}
+</style>
+<div class="outer-box">
+    <div class="inner-box">
+        <div class="signup-header">
+            <h1>Image Editing</h1>
+            <p>Let's see your new version now!</p>
+        </div>
+        <main class="signup-body">
+            <form action="/edit" method=post enctype=multipart/form-data>
+                <p>
+                    <label for="file ">SELECT AN IMAGE TO EDIT</label>
+                    <input class="form-control" type="file" name="file" id="file">
+                </p>
+                <!-- <p>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="rautelashialeshd2@gmail.com" required>
+                </p>
+                <p>
+                    <label for="password">Your Password</label>
+                    <input type="password" id="password" placeholder="Atleast 8 characters" required>
+                </p> -->
+                <p>
+                    <input type="submit" id="submit" value="Submit">
+                </p>
+            </form>
+        </main>
+        <footer class="signup-footer">
+            <p>Valid image extension :</p>
+            <p>JPG,JPEG,PNG,WEBP</p>
+        </footer>
+
+    </div>
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+    <div class="circle c4"></div>
+    <div class="circle c5"></div>
+    <div class="circle c6"></div>
+</div>
+{%endblock%}

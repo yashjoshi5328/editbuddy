@@ -1,0 +1,39 @@
+{% extends 'home_layout.html' %}
+{% block content %}
+<style>
+*{
+    overflow: hidden;
+}
+.outer-box{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* padding-top: 80px; */
+    flex-direction: column;
+    align-items: center;
+    background-image: url("{{ url_for('static', filename='images/img.jpg') }}");  
+    background-size: cover;  
+    color :white;    
+}
+.about
+{
+    padding: 75px;
+}
+.quote
+{
+    padding: 30px;
+}
+.footer
+{
+    padding: 320px;
+}
+</style>
+<div class="outer-box">
+    <h1 class="about">About Us</h1>
+    <div class="quote">Passionate about pixels, We lead an image editing project, transforming visions into visual masterpieces with precision and creativity.</div>
+    <div class="footer">
+        <p>&copy; 2023 YourWebsiteName. All rights reserved.</p>
+    </div>
+</div>
+{% endblock content %}

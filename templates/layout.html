@@ -1,0 +1,129 @@
+{% extends "home_layout.html" %}
+{% block content %}
+<!-- start navbar -->
+<!-- end navbar -->
+
+<!-- start sidebar -->
+<!-- COMPLETE THESE SIDDEBAR FUNCTIONS in home.html -->
+<!-- {% block sidebar %} {% endblock sidebar%} -->
+<div class="sidebar close">
+  <div class="logo-details">
+      <i class='bx bxs-ghost'></i>
+    <span class="logo_name">EDITBUDDY</span>
+  </div>
+  <ul class="nav-links">
+    <li>
+      <div class="iocn-link">
+        <a href="#">
+          <i class='bx bxs-crop'></i>
+          <span class="link_name">CROP</span>
+        </a>
+        <i class='bx bxs-chevron-down arrow' ></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a class="link_name" href="#">CROP</a></li>
+        <li><a href="/crop_1_1">1:1</a></li>
+        <li><a href="/crop_3_4">3:4</a></li>
+        <li><a href="/crop_4_3">4:3</a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="iocn-link">
+        <a href="#">
+          <i class='bx bxs-color'></i>
+          <span class="link_name">FILTERS</span>
+        </a>
+        <i class='bx bxs-chevron-down arrow' ></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a class="link_name" href="#">FILTERS</a></li>
+        <li><a href="/bnw">Black n White</a></li>
+        <li><a href="/motion_blur">Motion_blur</a></li>
+        <li><a href="/alien">Alien</a></li>
+        <li><a href="/predator">Predator</a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="iocn-link">
+        <a href="#">
+          <i class='bx bxs-palette' ></i>
+          <span class="link_name">ART</span>
+        </a>
+        <i class='bx bxs-chevron-down arrow' ></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a class="link_name" href="#">ART</a></li>
+        <li><a href="/water_color">Water Color</a></li>
+        <li><a href="/cartoon_yourself">Cartoonify Yourself</a></li>
+        <li><a href="/sketch">Sketch</a></li>
+      </ul>
+    <li>
+      <div class="iocn-link">
+        <a href="#">
+          <i class='bx bxs-adjust'></i>
+          <span class="link_name">ADJUSTMENT</span>
+        </a>
+        <i class='bx bxs-chevron-down arrow' ></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a class="link_name" href="#">ADJUSTMENT</a></li>
+        <li><a href="/brightness">Brightness</a></li>
+        <li><a href="/contrast">Contrast</a></li>
+        <li><a href="/sharpness">Sharpness</a></li>
+        <li><a href="/noise_reduction">Noise Reduction</a></li>
+        <li><a href="/smoothening">Smoothening</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="/download">
+          <i class='bx bx-save' ></i>
+        <span class="link_name">SAVE</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="/download">SAVE</a></li>
+      </ul>
+    </li>
+</ul>
+</div>
+
+<section class="home-section">
+  <div class="home-content">
+    <i class='bx bx-menu' ></i>
+    <span class="text">Drop Down Sidebar</span>
+  </div>
+</div>
+</section>
+  <!-- Create upload image and display  image box  -->
+    <div class="container">
+      <p>
+        <a href="/undo"><input type="submit" id="submit" value="Undo"></a>
+      </p>
+      {% block trackbar %}{% endblock %}
+      <img src="{{image}}" width="50%" height="50%"/>
+    </div>
+    
+  </div>
+
+
+<script>
+let arrow = document.querySelectorAll(".arrow");
+for (var i = 0; i < arrow.length; i++) {
+  arrow[i].addEventListener("click", (e)=>{
+ let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+ arrowParent.classList.toggle("showMenu");
+  });
+}
+let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".bx-menu");
+console.log(sidebarBtn);
+sidebarBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("close");
+});
+</script>
+{% endblock %}
+    
+    <!-- complete the html of about.html page  -->
+    <!-- {% block about %} {% endblock about %} -->
+    <!-- <h1>About Page</h1> -->
+    <!-- complete the login.html -->
+    <!-- {% block login %} {% endblock login %} -->

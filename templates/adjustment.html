@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block trackbar %}
+<style>
+    /* Style the trackbar */
+.slider {
+  width: 500px;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+
+/* Style the button */
+.hehe{
+  display: block;
+  margin: 10px auto;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(23, 59, 118);
+  color: white;
+  cursor: pointer;
+}
+
+.hehe:hover{
+    background-color: red ;
+}
+
+</style>
+<form method="POST">
+    <input name="value" type="range" min="0" max="10" value="5" class="slider" id="myRange">
+    <input type="submit" class="hehe" value="Submit">
+</form>
+{% endblock %}
