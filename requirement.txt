@@ -1,0 +1,3 @@
+numpy==latest_version
+Flask==latest_version
+opencv-python==latest_version
