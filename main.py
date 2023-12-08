@@ -49,7 +49,16 @@ def update_next():
 #homepage
 @app.route("/")
 def Home():
-    print("start")
+    if os.path.exists("static/images"):
+        for item in os.listdir("static/images"):
+            item_path = os.path.join("static/images", item)
+            if os.path.isfile(item_path):
+                os.remove(item_path)
+    if os.path.exists("uploads"):
+        for item in os.listdir("uploads"):
+            item_path = os.path.join("uploads", item)
+            if os.path.isfile(item_path):
+                os.remove(item_path)
     return render_template("index.html")
 
 
@@ -479,4 +488,4 @@ def superresolution():
 def about():
     return render_template('about.html')
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True, use_reloader=False)
